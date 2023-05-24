@@ -2,8 +2,8 @@ from random import randint
 
 running = 1
 
-runner = open("Runner.py", "w")
-runner.truncate()
+
+
 
 def do(argument1):
     runner = open("Runner.py", "a+")
@@ -39,14 +39,16 @@ while running == 1:
         print("help() shows commands")
         print("stop(True) stops program")
         print("clear() clears data")
+        print("nl() newline")
     elif userinput == "clear()":
         runner = open("Runner.py", "w")
         runner.truncate()
-    else:
-        out = do(userinput)
-        runner = open("Runner.py", "a+")
-        runner.truncate()
-        runner.close()
+
+    elif userinput == "nl()":
+        userinput = ""
+    
+    out = do(userinput)
+        
     print(out)
     
 
