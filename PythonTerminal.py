@@ -20,6 +20,19 @@ def do(argument1):
 
 while running == 1:
     userinput = input(": ")
+    lis = list(userinput)
+    if lis[len(lis) - 1] == "#":
+        runner = open("Runner.py", "w")
+        runner.truncate()
+        runner.close()
+        y = 0
+        userinput = ""
+        while y < len(lis) - 1:
+            userinput += lis[y]
+            y += 1
+    
+
+
     if userinput == "stop(True)":
         running = 0
     elif userinput == "help()":
